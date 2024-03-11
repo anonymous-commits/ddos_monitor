@@ -146,7 +146,7 @@ if response.status_code == 200:
 
     # Initialize a list to store newly added links
     new_files = []
-
+    process_files = []
     # Iterate through the links and identify newly added links
     for link in links:
         file_name = link.text.strip()
@@ -165,7 +165,6 @@ if response.status_code == 200:
 
         last_day = datetime.today() - timedelta(days=1)
         #Download all new files
-        process_files = []
         for file_name in new_files:
             print(f"Downloading {file_name}...")
 
